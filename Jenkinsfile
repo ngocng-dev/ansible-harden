@@ -28,8 +28,9 @@ node {
             }
             stage("Build and verify 1"){
                 defaultplatform = sh (
-                    script: '''#!/bin/bash
-kitchen list | awk "!/Instance/ {print \\$1; exit}"
+                    script: '''
+                        #!/bin/bash
+                        kitchen list | awk "!/Instance/ {print \\$1; exit}"
                         ''',
                     returnStdout: true
                     ).trim()
