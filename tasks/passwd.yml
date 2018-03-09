@@ -7,7 +7,7 @@
     url: "{{ item.u }}"
     dest: "/usr/share/dict/{{ item.u | basename }}"
     mode: '0644'
-    checksum: "{{ item.h }}"
+    #checksum: "{{ item.h }}"
   with_items: "{{ harden_cracklib_dict }}"
   when: ansible_os_family == 'Debian' or ansible_os_family == 'RedHat'
 
